@@ -28,6 +28,11 @@ namespace LeaveManagementSystem.Repository
             return Save();
         }
 
+        public bool Exists(int id)
+        {
+            return _dbContext.LeaveHistories.Any(l => l.Id == id);
+        }
+
         public LeaveHistory FindById(int id)
         {
             return _dbContext.LeaveHistories.FirstOrDefault(l => l.Id == id);

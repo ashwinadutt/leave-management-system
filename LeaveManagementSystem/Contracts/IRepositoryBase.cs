@@ -11,6 +11,8 @@ namespace LeaveManagementSystem.Contracts
 
         T FindById(int id);
 
+        bool Exists(int id);
+
         bool Add(T entity);
 
         bool Update(T entity);

@@ -28,6 +28,11 @@ namespace LeaveManagementSystem.Repository
             return Save();
         }
 
+        public bool Exists(int id)
+        {
+            return _dbContext.LeaveAllocations.Any(l => l.Id == id);
+        }
+
         public LeaveAllocation FindById(int id)
         {
             return _dbContext.LeaveAllocations.FirstOrDefault(l => l.Id == id);
